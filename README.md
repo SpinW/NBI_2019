@@ -12,4 +12,4 @@ Slides are in `slides.html` and can be modified accordingly (duh!).
 
 ## For publishing
 
-This can be published by creating a gh-pages branch and will be served at `www.spinw.org/BasicPresentation`. An accompanying post should be created in the `spinw.github.io` repo under `_presentations` so it is automaticall published from the main site.
+This can be published by creating a gh-pages branch and will be served at `www.spinw.org/BasicPresentation`. An accompanying post should be created in the `spinw.github.io` repo under `pages/_presentations` so it is automaticall published from the main site.

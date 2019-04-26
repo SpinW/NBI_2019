@@ -4,8 +4,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<!-- This is the presentation title -->
-	<title>SpinW Presentation</title>
-	<meta name="description" content="This master template contains all available slide variants" />
+	<title>Introduction to SpinW</title>
+	<meta name="description" content="Introduction to SpinW" />
 
 	<link rel="stylesheet" href="presentation_base/css/reveal.css">
 	<link rel="stylesheet" href="presentation_base/css/theme/spinw.css">
@@ -27,12 +27,26 @@
 <body>
 <!-- This is where you choose the theme -->
 <div class="reveal pattern--fire-side">
-	<div data-external="slides.html" class="slides"></div>
+	<div class="slides">
+		<!--<section data-external="parts/intro.html"> </section>-->
+		<section data-external="parts/intro.html"> </section>
+<!--		<section data-external="parts/content/motivation.html"></section>-->
+<!--		<section data-external="parts/content/solidState.html"></section>-->
+<!--		<section data-external="parts/content/INS.html"></section>-->
+<!--		<section data-external="parts/content/classicalSWT.html"></section>-->
+<!--		<section data-external="parts/content/semiSWT_Bravis.html"></section>-->
+		<section data-external="parts/content/semiSWT_SQ.html"></section>
+		<section data-external="parts/content/spinW.html"></section>
+		<section data-external="parts/content/example1.html"></section>
+		<section data-external="parts/end.html"> </section>
+		<!--<section data-external="parts/other.html"> </section>-->
+	</div>
 </div>
 
 <script src="presentation_base/lib/js/head.min.js"></script>
 <script src="presentation_base/js/reveal.js"></script>
-
+<script src="presentation_base/plugin/function-plot/site/js/vendor/d3.js"></script>
+<!--<script src="node_modules/@iconfu/svg-inject/dist/svg-inject.min.js"></script>-->
 <script>
 	// More info about config & dependencies:
 	// - https://github.com/hakimel/reveal.js#configuration
@@ -45,11 +59,34 @@
 		minScale: 1,
 		maxScale: 1,
 		history: true,
+		// anything: [
+		// 	{
+		// 		className: "anything",
+		// 		initialize: (function(container, options){ if (options && options.initialize) { options.initialize(container)} })
+		// 	},
+		// 	{
+		// 		className: "chart",
+		// 		initialize: (function(container, options){ container.chart = new Chart(container.getContext("2d"), options);  })
+		// 	},
+		// 	{
+		// 		className: "plot",
+		// 		defaults: {width:500, height: 500, grid:true},
+		// 		initialize: (function(container, options){ options.target = "#"+container.id; functionPlot(options) })
+		// 	},
+		// 	// ...
+		// ],
+		math: {
+			//mathjax: 'node_modules/mathjax/MathJax.js' //offline local
+			mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js'
+		},
 		dependencies: [
-			{ src: 'presentation_base/plugin/markdown/marked.js' },
-			{ src: 'presentation_base/plugin/markdown/markdown.js' },
-			{ src: 'presentation_base/plugin/menu-master/menu.js' },
-			{ src: 'presentation_base/plugin/external/external/external.js' , condition: function() { return !!document.querySelector( '[data-external]' ); }},
+			{ src: 'presentation_base/plugin/menu/menu.js' },
+			{ src: 'presentation_base/plugin/math/math.js', async: true },
+			{ src: 'presentation_base/plugin/external/external/external.js' ,
+				condition: function() {
+					return !!document.querySelector( '[data-external],[data-external-replace]' );
+				}
+			},
 			{ src: 'presentation_base/plugin/notes/notes.js', async: true },
 			{
 				src: 'presentation_base/plugin/highlight/highlight.js',
@@ -72,10 +109,21 @@
 				},
 				callback: function () {
 					hljs.initHighlightingOnLoad();
+					var content_div = document.getElementById("edit");
+					content_div.addEventListener("blur", function() {
+						hljs.highlightBlock(document.getElementById("codeblock"));
+					})
 				}
-			}
-		],
+			},
+			{ src: 'presentation_base/js/jquery-3.3.1.min.js' },
+			{ src: 'presentation_base/plugin/function-plot/site/js/vendor/d3.js' },
+			{ src: 'presentation_base/plugin/markdown/marked.js' },
+			{ src: 'presentation_base/plugin/markdown/markdown.js'},
 
+		],
+		external: {
+			async: false,
+		},
 		menu: {
 			// Specifies which side of the presentation the menu will
 			// be shown. Use 'left' or 'right'.
@@ -189,7 +237,7 @@
 			loadIcons: true
 		},
 
-	});
+	},);
 </script>
 </body>
 </html>

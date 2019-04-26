@@ -1,0 +1,85 @@
+<section class="subsection color--radiant" id="spinWhead">
+    <div class="grid-wrapper">
+        <div class="logo"></div>
+        <h1>General spin Hamiltonian - SpinW</h1>
+        <div class="description">
+            How does SpinW work?
+        </div>
+    </div>
+</section>
+
+<section class="blank" id="SpinWHamiltonian">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">Classical spin waves in a ferromagnetic chain</div>
+        </div>
+        <content>
+            <h2>General spin Hamiltonian:</h2>
+            $$
+            H = \sum_{mi,nj} \mathbf{S}_{mi}^T \cdot J_{mi} \cdot \mathbf{S}_{nj} + \sum_{mi}\mathbf{S}_{mi}^T \cdot A_i \cdot \mathbf{S}_{mi} + \mu_B\mathbf{H}^T\sum_{mi}g_i\mathbf{S}_{mi}
+            $$
+            <p><br>With the anisotropic and antisymmetric (Dzyaloshinskii-Moriya) exchange
+                interactions:<br></p>
+
+            $$J_S = \begin{bmatrix} J_x & 0 & 0 \\ 0 & J_y & 0 \\ 0 & 0 & J_z \end{bmatrix} ; J_A = \begin{bmatrix} 0 & D_z & -D_y \\ -D_z & 0 & D_x \\ D_y & -D_x & 0 \end{bmatrix}$$
+        </content>
+    </div>
+</section>
+
+
+<section class="blank" id="SpinWHamiltonian2">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">Classical spin waves in a ferromagnetic chain</div>
+        </div>
+        <content>
+            <h2>Key Points:</h2>
+            <br>
+            <b>Non-Bravais lattice</b><br>
+            <ul>
+                <li>Additional rotation on every site within unit cell<br></li>
+            </ul>
+            <br>
+            <b>General interactions</b><br>
+            <ul>
+                <li>Multi-q magnetic ground states are possible</li>
+            </ul>
+
+            <h2><br>SpinW</h2>
+            <ul>
+                <li>Solves the general spin Hamiltonian</li>
+                <li>Calculates spin-spin correlation function</li>
+                <li>Numerical and symbolical</li>
+                <li>Can apply crystal symmetry operators on the Hamiltonian solves single-q magnetic structures</li>
+                <li>Solves multi-q magnetic structures on a magnetic supercell open source, runs on Matlab</li>
+                <li>More information: <a href="http://www.spinw.org" target="_blank">http://www.spinw.org</a></li>
+                <li>Download from: <a href="https://www.github.com/spinw/spinw" target="_blank">https://www.github.com/spinw/spinw</a></li>
+            </ul>
+        </content>
+    </div>
+</section>
+
+<section class="blank" id="spinWWorkflow">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">SpinW Workflow</div>
+        </div>
+        <content>
+            <div class="container" style="  display: grid;
+                                            grid-template-rows: 80% 5% auto;
+                                            height: 100%;">
+                <div style="grid-row-start:1; grid-row-end:2;">
+                    <img src="images/spinw_link.png" style="display: block;
+  margin-left: auto;
+  margin-right: auto; height: 100%">
+                </div>
+                <div style="grid-row-start:3; grid-row-end:4;">
+                    <p>Data transfer diagram in SpinW</p>
+                </div>
+            </div>
+        </content>
+    </div>
+</section>
